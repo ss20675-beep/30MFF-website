@@ -1,0 +1,344 @@
+
+/* --- General Reset --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  color: #333;
+  background: #fff;
+  scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* --- Navbar --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: #4B0082; /* NYU Purple */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  height: 50px;       /* adjust size */
+  width: auto;        /* maintain aspect ratio */
+}
+
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+.navbar ul li {
+  margin-left: 20px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  color: #FFD700; /* Gold accent */
+}
+
+/* --- Hero Section --- */
+.hero {
+  height: 100vh;
+  background: url('zimage/zzz.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* --- Button --- */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #FFD700;
+  color: #4B0082;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #4B0082;
+  transform: scale(1.05);
+}
+
+/* Pulsing animation for home button */
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* --- Content Sections --- */
+.content-section {
+  padding: 80px 20px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+
+.content-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.content-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: #4B0082;
+}
+
+.content-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #4B0082;
+}
+
+.content-section p {
+  max-width: 700px;
+  margin: 0 auto 20px auto;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* --- Video --- */
+.video-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+iframe {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* --- Explore Section --- */
+.explore {
+  background: #f5f5f5;
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #4B0082;
+  color: #fff;
+}
+
+/* --- Fade-in Animation --- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(50px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+.student-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* space between images */
+  margin-top: 20px;
+}
+
+.student-gallery img {
+  width: 30%;           /* each image takes up about 1/3 of the row */
+  border-radius: 10px;  /* rounded corners */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.student-gallery img:hover {
+  transform: scale(1.05); /* zoom effect on hover */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+  .student-gallery img {
+    width: 45%; /* 2 per row on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .student-gallery img {
+    width: 100%; /* 1 per row on small screens */
+  }
+}
+/* Section backgrounds */
+#about {
+  background-color: #f3f4f6; /* light gray */
+}
+
+#tour {
+  background-color: #e6e6fa; /* lavender */
+}
+
+#student-life {
+  background-color: #fdf2f8; /* soft pink */
+}
+
+#explore {
+  background-color: #f0f9ff; /* light sky blue */
+}
+
+/* Give spacing between sections */
+.content-section {
+  padding: 80px 20px;
+}
+.content-section {
+  transition: background-color 0.6s ease-in-out;
+}
+/* Carousel styling */
+.carousel {
+  position: relative;
+  max-width: 600px;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+  width: 100%;
+  flex-shrink: 0;
+  display: none;
+}
+
+.carousel-images img.active {
+  display: block;
+}
+
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.carousel .prev {
+  left: 10px;
+}
+
+.carousel .next {
+  right: 10px;
+}
+/* Stats Image Styling */
+.stats {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.stats-image {
+  max-width: 80%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.stats-caption {
+  margin-top: 10px;
+  font-style: italic;
+  color: #444;
+}
+
+/* Stats container */
+.stats {
+  display: flex;             /* places items side by side */
+  align-items: center;       /* vertically aligns text with image */
+  justify-content: center;   /* centers everything in the section */
+  gap: 20px;                 /* space between image and text */
+  margin: 40px auto;
+  max-width: 900px;          /* prevents it from being too wide */
+}
+
+/* Image styling */
+.stats-image {
+  width: 50%;                /* image takes half space */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Text styling */
+.stats-text {
+  width: 40%;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+  font-style: italic;
+}
+/* Hidden by default */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Show when scrolled into view */
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
